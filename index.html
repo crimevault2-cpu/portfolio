@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Tisha Shah · Architecture Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Gate Loading Overlay -->
+    <div id="gate-overlay">
+        <div class="gate-left"></div>
+        <div class="gate-right"></div>
+        <div class="gate-message">
+            <h2>Welcome to my portfolio</h2>
+            <div class="gate-line"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">T.SHAH</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#academic" class="nav-link">Academic Projects</a></li>
+                <li><a href="#rsp" class="nav-link">RSP</a></li>
+                <li><a href="#" id="cv-trigger" class="nav-link">CV</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <canvas id="shape-canvas"></canvas>
+
+    <main id="main-content">
+        <!-- HERO SECTION with photo on right -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1 class="hero-name">Tisha Shah</h1>
+                    <p class="hero-title">Architecture Student · Nirma University</p>
+                    <div class="hero-line"></div>
+                    <p class="hero-statement">Designing thoughtful spaces through context, material, and human experience.</p>
+                    <div class="hero-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Mehsana, Gujarat</span>
+                        <span><i class="fas fa-graduation-cap"></i> B.Arch '23–'28</span>
+                    </div>
+                </div>
+                <div class="hero-photo">
+                    <img src="documents/PHOTO.jpg.jpeg" alt="Tisha Shah">
+                </div>
+            </div>
+        </section>
+
+        <section id="academic" class="academic-section">
+            <div class="section-header">
+                <h2 class="section-title">Academic Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid" id="academic-grid"></div>
+        </section>
+
+        <section id="rsp" class="rsp-section">
+            <div class="section-header">
+                <h2 class="section-title">Related Study Program (RSP)</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="rsp-grid" id="rsp-grid"></div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <h2 class="section-title">About</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-container">
+                <div class="about-text">
+                    <p class="about-lead">Architecture student at Nirma University with a focus on spatial clarity, contextual response, and material exploration.</p>
+                    <p>Passionate about designing spaces that resonate with cultural narratives and environmental sensitivity. Experienced in design development, working drawings, and community-oriented projects.</p>
+                </div>
+                <div class="design-philosophy">
+                    <h4>Design philosophy</h4>
+                    <p>“Context drives form. Material tells story. Light shapes experience.”</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-buttons">
+                <a href="mailto:23bar035@nirmauni.ac.in" class="contact-btn"><i class="fas fa-envelope"></i> University Email</a>
+                <a href="mailto:trstisha@gmail.com" class="contact-btn"><i class="fas fa-envelope-open-text"></i> Personal Email</a>
+                <a href="tel:+919081661402" class="contact-btn"><i class="fas fa-phone-alt"></i> Phone</a>
+                <a href="#" class="contact-btn" id="location-btn"><i class="fas fa-location-dot"></i> Mehsana, GJ</a>
+                <a href="#" class="contact-btn" id="linkedin-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#" class="contact-btn" id="instagram-btn"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+            <div class="contact-note">Feel free to reach out for collaborations, studio discussions, or portfolio inquiries.</div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <span><i class="far fa-copyright"></i> 2025 Tisha Shah · Architecture Portfolio</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- CV Modal -->
+    <div id="cv-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container cv-modal-container">
+            <button class="modal-close cv-close"><i class="fas fa-times"></i></button>
+            <div class="modal-content cv-content">
+                <div class="cv-header">
+                    <h1>Tisha Shah</h1>
+                    <p class="cv-subhead">Architecture Student · Nirma University</p>
+                    <div class="cv-contact-row">
+                        <span><i class="fas fa-envelope"></i> 23bar035@nirmauni.ac.in</span>
+                        <span><i class="fas fa-phone"></i> +91 90816 61402</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Mehsana, Gujarat</span>
+                    </div>
+                </div>
+                <div class="cv-grid">
+                    <div class="cv-section"><h2>Education</h2>
+                        <div class="cv-entry"><div class="cv-date">2023 – Present</div><div class="cv-detail"><strong>Nirma University, Ahmedabad</strong><br>B.Arch (Bachelor of Architecture)</div></div>
+                        <div class="cv-entry"><div class="cv-date">2023</div><div class="cv-detail"><strong>Higher Secondary</strong><br>Sabari Vidhya Vihar</div></div>
+                        <div class="cv-entry"><div class="cv-date">2021</div><div class="cv-detail"><strong>Secondary</strong><br>Anand Niketan School</div></div>
+                    </div>
+                    <div class="cv-section"><h2>Skills</h2>
+                        <div class="cv-skills-badge">
+                            <span>AutoCAD</span><span>SketchUp</span><span>3ds Max</span><span>Lumion</span><span>Enscape</span>
+                            <span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>Revit</span><span>ArcMap/QGIS</span>
+                            <span>Hand Drafting</span><span>Model Making</span>
+                        </div>
+                    </div>
+                    <div class="cv-section"><h2>Experience</h2>
+                        <div class="cv-entry"><div class="cv-date">2 months</div><div class="cv-detail"><strong>Akruti Architects, Mehsana</strong> – Architectural Intern (working drawings, 3D modeling, site visits)</div></div>
+                    </div>
+                    <div class="cv-two-columns">
+                        <div class="cv-section"><h2>Achievements</h2><ul class="cv-list"><li>Selected for Metaform Booklet (Sem 4)</li><li>Work exhibited at Kalp Fest (Sem 2 & Sem 4)</li></ul></div>
+                        <div class="cv-section"><h2>Competitions</h2>
+                            <ul class="cv-list">
+                                <li>67th NASA CPK Trophy (June 2024)</li>
+                                <li>GDA Competition (2025)</li>
+                                <li id="coa-competition-link" style="cursor:pointer; color:#111; transition:color 0.2s;"><i class="fas fa-trophy"></i> COA Ghaziabad Competition (Aug 2025) – Click to view</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-section"><h2>Workshops</h2><div class="cv-skills-badge"><span>Terrarium</span><span>Cyanotype</span><span>Candle Making</span><span>Resin</span><span>Glass Painting</span><span>Block Printing</span><span>Clay Pottery</span><span>Tie & Dye</span><span>Paper Making</span><span>HIAL (Wattle & Daub)</span></div></div>
+                    <div class="cv-section"><h2>Languages</h2><div class="cv-skills-badge"><span>English</span><span>Hindi</span><span>Gujarati</span></div></div>
+                    <div class="cv-section"><h2>Interests</h2><p>Traveling, Sketching, Model Making, Cultural Documentation</p></div>
+                </div>
+                <div class="cv-footer-note">Full portfolio and references available upon request.</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
